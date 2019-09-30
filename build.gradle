@@ -9,8 +9,9 @@ plugins {
     id 'jacoco'
     id 'checkstyle'
     id 'com.github.kt3k.coveralls' version '2.4.0'
-    id 'com.github.johnrengelman.shadow' version '4.0.4'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
     id 'org.asciidoctor.convert' version '1.5.6'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
     id 'application'
 }
 
@@ -26,7 +27,12 @@ repositories {
 }
 
 checkstyle {
-    toolVersion = '8.1'
+    toolVersion = '8.23'
+}
+
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 jacocoTestReport {
@@ -40,6 +46,8 @@ jacocoTestReport {
 test {
     useJUnitPlatform()
 }
+
+
 
 dependencies {
     String jUnitVersion = '5.4.0'
